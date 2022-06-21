@@ -2,11 +2,14 @@ import React from "react";
 import { Masonry } from "@mui/lab";
 
 import "./CustomMasonry.css";
+import { isMobileOnly, isTablet } from "react-device-detect";
 
 const CustomMasonry = () => {
-  const heights = [100, 23, 542, 32, 56, 250, 123, 34, 50, 60, 72, 29];
+  const heights = [100, 23, 142, 32, 56, 250, 123, 34, 50, 60, 72, 29];
+  const numOfColumns = isMobileOnly ? 1 : isTablet ? 2 : 3;
+
   return (
-    <Masonry columns={3} spacing={2}>
+    <Masonry columns={numOfColumns} spacing={2}>
       {heights.map((h, idx) => (
         <div
           key={idx}

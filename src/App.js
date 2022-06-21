@@ -1,9 +1,12 @@
+import { Container } from "@mui/material";
 import CustomMasonry from "./components/CustomMasonry/CustomMasonry";
 
 function App() {
   return (
     <div className="App">
-      <CustomMasonry />
+      <Container maxWidth="xl">
+        <CustomMasonry />
+      </Container>
     </div>
   );
 }
